@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Grid 사용하기</title>
+    <style media="screen">
+      div{
+        border:5px solid gray;
+      }
+      /* Grid : 화면이 내용의 양과 상관없이 크기 조정 됨(display type, columns로 각 태그의 화면 비율 정함) */
+      #grid{
+        border:5px solid pink;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--의미없는 태그 (디자인의 목적만 있는 무색무취 태그) -> div : block level element (화면전체) / span : inline element (일부)-->
+    <div id="grid">
+      <div>NAVIGATION</div>
+      <div>ARTICLE</div>
+    </div>
+
+  </body>
+
+</html>

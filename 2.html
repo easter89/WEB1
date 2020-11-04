@@ -1,34 +1,98 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <title>WEB2 - CSS</title>
+
+    <!--style 태그 안의 내용은 CSS 코드임 -->
+    <!--태그선택자 : html a 태그의 디자인(색깔 등)을 일괄 지정함 (우선순위 3) -->
+    <!-- . class선택자 : class(.)가 saw, active인 태그의 CSS를 일괄 지정함 ex) .saw .active (우선순위 2) -->
+    <!-- # id선택자 : id(#)가 active2인 태그의 CSS를 일괄 지정함 ex) ex) #active2 (우선순위 1) -->
+    <style>
+      body{
+        margin:0;
+      }
+      a{
+        color:black;
+        text-decoration:none;
+      }
+      h1{
+          font-size:45px;
+          text-align:center;
+          border-bottom:1px solid gray;
+          margin:0;
+          padding:20px;
+      }
+      ol{
+        border-right:1px solid gray;
+        width:100px;
+        margin:0;
+        padding:20px;
+        padding-left:33px;
+      }
+      #active2{
+        color:red;
+      }
+      .saw{
+        color:gray;
+      }
+      .active{
+        color:blue;
+      }
+      #grid{
+        display:grid;
+        grid-template-columns: 150px 1fr;
+      }
+      #article{
+        padding:25px;
+      }
+      /* 화면의 크기가 800px보다 작으면 -> id가 grid인 태그부분의 화면을 block화면 구성으로(아래로 내려가게) 보이게 한다, ol태그의 테두리를 보이지 않게 한다 */
+      @media(max-width:800px){
+        #grid{
+          display:block;
+        }
+        ol{
+          border-right:none;
+        }
+        h1{
+          border-bottom:none;
+        }
+      }
+
+    </style>
   </head>
 
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <!-- ol : orderd list // li : list-->
-  <ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html">JavaScript</a></li>
-  </ol>
 
-  <h2>CSS</h2>
-  <!-- a : ancher (닻) // href : html reference-->
-  <a href="https://www.w3.org/" target="_blank" title="html5 specification">Hypertext Markup Language (HTML)</a> is the standard markup language
-  for <strong> creating <u>web</u> pages </strong> and web applications.
-  <br>Web browsers receive HTML documents from a web server or from local storage
-  and render them into multimedia web pages. HTML describes the structure of a web page
-  semantically and originally included cues for the appearance of the document.
+  <div id="grid">
+    <!-- ol : orderd list // li : list-->
+    <ol>
+      <!-- a 태그의 클래스 명을 지정함 (space를 통해 여러개 지정 가능함) -->
+      <li><a href="1.html" class="saw">HTML</a></li>
+      <li><a href="2.html" class="saw active" id="active2">CSS</a></li>
+      <li><a href="3.html">JavaScript</a></li>
+    </ol>
 
-  <!-- p : paragraphs-->
-  <p>HTML elements are the building blocks of HTML pages.
-  With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page.
-  <p style="margin-top:40px">It provides a means to create structured documents by denoting structural semantics
-  for text such as headings, paragraphs, lists, links, quotes and other items.
-  HTML elements are delineated by tags, written using angle brackets.</<p>
+    <div id="article">
+      <h2>CSS</h2>
+      <!-- a : ancher (닻) // href : html reference-->
+      <a href="https://www.w3.org/" target="_blank" title="html5 specification">Hypertext Markup Language (HTML)</a> is the standard markup language
+
+      <!--HTML 코드의 지정된 부분을 style 속성으로 CSS 디자인 기능을 사용 -->
+      for <strong  style="color:red; text-decoration:underline"> creating <u>web</u> pages </strong> and web applications.
+      <br>Web browsers receive HTML documents from a web server or from local storage
+      and render them into multimedia web pages. HTML describes the structure of a web page
+      semantically and originally included cues for the appearance of the document.
+
+      <!-- p : paragraphs-->
+      <p>HTML elements are the building blocks of HTML pages.
+      With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page. </p>
+      <p style="margin-top:40px">It provides a means to create structured documents by denoting structural semantics
+      for text such as headings, paragraphs, lists, links, quotes and other items.
+      HTML elements are delineated by tags, written using angle brackets.</<p>
+    </div>
+  </div>
 
   <h1>This is heading 1</h1>
   <h2>This is heading 2</h2>
@@ -44,5 +108,5 @@
     <li>JavaScript</li>
   </ul>
 
-</body>
+  </body>
 </html>

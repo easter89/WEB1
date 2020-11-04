@@ -1,0 +1,49 @@
+body{
+  margin:0;
+}
+a{
+  color:black;
+  text-decoration:none;
+}
+h1{
+    font-size:45px;
+    text-align:center;
+    border-bottom:1px solid gray;
+    margin:0;
+    padding:20px;
+}
+ol{
+  border-right:1px solid gray;
+  width:100px;
+  margin:0;
+  padding:20px;
+  padding-left:33px;
+}
+#active2{
+  color:red;
+}
+.saw{
+  color:gray;
+}
+.active{
+  color:blue;
+}
+#grid{
+  display:grid;
+  grid-template-columns: 150px 1fr;
+}
+#article{
+  padding:25px;
+}
+/* 화면의 크기가 800px보다 작으면 -> id가 grid인 태그부분의 화면을 block화면 구성으로(아래로 내려가게) 보이게 한다, ol태그의 테두리를 보이지 않게 한다 */
+@media(max-width:800px){
+  #grid{
+    display:block;
+  }
+  ol{
+    border-right:none;
+  }
+  h1{
+    border-bottom:none;
+  }
+}
